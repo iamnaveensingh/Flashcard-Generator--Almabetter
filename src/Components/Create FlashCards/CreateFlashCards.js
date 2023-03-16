@@ -1,3 +1,4 @@
+// In this page creating a new flashcard
 import React, { useRef } from 'react';
 import { Form, Field, Formik, FieldArray, ErrorMessage } from 'formik';
 import { MdUploadFile } from 'react-icons/md';

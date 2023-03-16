@@ -13,7 +13,7 @@ const FlashCardsHome = () => {
 
         <div className='flex ' >
           <div className='m-2 flex  items-center w-[100px]' >
-
+            {/* created navlink to navigate between Create New page to My Flashcard page */}
             <NavLink to='/'>
               <button className="font-bold dark:bg-gray-300 rounded-md " >
                 Create New
@@ -32,12 +32,13 @@ const FlashCardsHome = () => {
         </div>
 
         <hr className="border bg-black-700 mt-[-10px] border-gray-300" />
-
+        {/* adding routes  */}
         <Routes>
           <Route>
             <Route index path='/' element={<CreateFlashCards />} />
             <Route path='/myflashcard' element={<MyFlashCards />} />
             <Route path='/flashcardsdetails/:id' element={<FlashCardsDetails />} />
+            {/* if path is not match it will shows Error404 component */}
             <Route path='*' element={<Error404 />} />
           </Route>
         </Routes>
