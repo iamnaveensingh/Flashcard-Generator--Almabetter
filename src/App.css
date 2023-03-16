@@ -1,0 +1,45 @@
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* import { IoIosArrowForward } from 'react-icons/ioios'; */
+
+.active{
+  color: red;
+  border-bottom: 4px solid red;
+  border-radius: 4px;
+  padding: 7px 4px;
+  
+}
+.activeTerm{
+  color: red;
+  font-size: larger;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.activeTerm > .icon{
+  display: inline-block;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+.space-evenly{
+  justify-content: space-evenly;
+}
