@@ -1,9 +1,9 @@
-// In this page creating a new flashcard
 import React, { useRef } from 'react';
 import { Form, Field, Formik, FieldArray, ErrorMessage } from 'formik';
 import { MdUploadFile } from 'react-icons/md';
 import { BsPlus } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
+import { TiDeleteOutline } from 'react-icons/ti';
 import { TbEdit } from 'react-icons/tb';
 import { signUpSchema } from '../../schemas';
 import { useDispatch } from 'react-redux'
@@ -103,7 +103,7 @@ const CreateFlashCards = () => {
                   if image is present it's shows the image preview with delete icon to delete image
                   if image is not present its shows image uploading button */}
                   {
-                    values.uploadimage ? (<div className='flex '> <img className='h-16 mt-2' src={values.uploadimage} alt="" /> <MdDelete className='text-3xl text-red-600' onClick={() => setFieldValue("uploadimage", '')} /> </div>) :
+                    values.uploadimage ? (<div className='flex '> <img className='h-16 mt-2' src={values.uploadimage} alt="" /> <TiDeleteOutline className='text-3xl text-red-600' onClick={() => setFieldValue("uploadimage", '')} /> </div>) :
                       (<label htmlFor='uploadimage'
                         className="w-44 h-[38px]  cursor-pointer px-3 mx-3 mt-8 py-1 bg-gray-200 border-gray-200 flex  items-center justify-center  rounded" >
                         <MdUploadFile
@@ -212,7 +212,7 @@ const CreateFlashCards = () => {
                           if image is present it's shows the image preview with delete icon to delete image 
                           if image is not present its shows image uploading button */}
                           {
-                            term.term_uploadimage ? ((<div className='flex  '> <img className='h-16 mt-2  max-w-[12rem]' src={term.term_uploadimage} alt="" /> <MdDelete className='text-3xl text-red-600' onClick={() => setFieldValue(`term.${index}.term_uploadimage`, '')} /> </div>)) :
+                            term.term_uploadimage ? ((<div className='flex  '> <img className='h-16 mt-2  max-w-[12rem]' src={term.term_uploadimage} alt="" /> <TiDeleteOutline className='text-3xl text-red-600' onClick={() => setFieldValue(`term.${index}.term_uploadimage`, '')} /> </div>)) :
                               (<label htmlFor={`term.${index}.term_uploadimage`} className="w-44 h-[38px] cursor-pointer px-3 mx-3 mt-8 py-1 bg-gray-200 border-gray-200 flex  items-center justify-center  rounded" >
                                 <span className='text-blue-700 font-bold'>Select Image</span>
                               </label>)
