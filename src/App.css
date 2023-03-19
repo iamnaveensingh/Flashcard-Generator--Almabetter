@@ -36,6 +36,9 @@
 .activeTerm > .icon{
   display: inline-block;
 }
+.activeCarouselButton{
+background-color: red;
+}
 
 .space-between{
   justify-content: space-between;
