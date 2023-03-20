@@ -1,9 +1,10 @@
-// this is cards detail page 
+// this is cards details page 
 import React, { useEffect } from 'react';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { TfiBackRight } from 'react-icons/tfi';
 import { BsCloudDownload } from 'react-icons/bs';
 import { BsPrinter } from 'react-icons/bs';
+import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import ShareModel from './ShareModel';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -15,8 +16,8 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 const FlashCardsDetails = () => {
 
-
-  const [active, setActive] = useState(1);
+  // using useState for adding active class
+  const [active, setActive] = useState(0);
   //  it's a function to reassign value to active 
   const handleClick = (event) => {
     setActive(event);
@@ -39,7 +40,25 @@ const FlashCardsDetails = () => {
   const [TermImg, setTermImg] = useState(Details_IMG);
   // use useState hook to set cards image of term_uploadimage
   const [TermDis, setTermDis] = useState("");
-
+  // Setting image and definition on click on next and previous button
+  const setCard = (NewIndex) => {
+    setTermDis(carddata.term[NewIndex].Enter_Definition)
+    setTermImg(carddata.term[NewIndex].term_uploadimage ? (carddata.term[0].term_uploadimage) : (Details_IMG))
+  }
+  // It's a function for next button
+  const nextCard = () => {
+    const isLastCard = active === carddata.term.length - 1;
+    const NewIndex = isLastCard ? 0 : active + 1;
+    setActive(NewIndex);
+    setCard(NewIndex);
+  }
+  // It's a function for previous button
+  const prevCard = () => {
+    const isFirstSlide = active === 0;
+    const NewIndex = isFirstSlide ? carddata.term.length - 1 : active - 1;
+    setActive(NewIndex);
+    setCard(NewIndex);
+  }
   // function for set term image and term definition as well as call the function handelClick 
   function displayTermDetails(item, index) {
     setTermImg(item.term_uploadimage ? (item.term_uploadimage)
@@ -76,10 +95,10 @@ const FlashCardsDetails = () => {
             {carddata.term.map((item, index) => {
               return (
                 <div key={index}
-                  onClick={() => displayTermDetails(item, index + 1)}
+                  onClick={() => displayTermDetails(item, index)}
                   className="p-3 font-medium cursor-pointer ">
                   {/* applying active class on the term where you clicked  */}
-                  <div className={active === index + 1 ? "activeTerm" : undefined} >
+                  <div className={active === index ? "activeTerm" : undefined} >
                     <IoIosArrowForward className=' icon hidden mr-1' />
                     {item.Enter_Term}
                   </div>
@@ -94,28 +113,24 @@ const FlashCardsDetails = () => {
           <div className="" id='forPrint'>
             <div className=" flex flex-wrap py-11 px-5  p-3 drop-shadow-md my-3 dark:bg-gray-800 bg-white rounded-lg  ">
               <div className=" pr-2 h-[286px] flex justify-center items-center w-[240px] sm:w-[320px] md:w-[320px] lg:w-[320px] xl:w-[320px]  overflow-hidden">
-                <img src={TermImg} alt="" className='m-auto rounded-lg max-h-[286px]' />
+                <img src={TermImg} alt="" className='m-auto rounded-lg max-h-[286px] transition duration-300 ease-in-out hover:scale-110' />
               </div>
 
               <div className=" pl-2 w-[240px] sm:w-[320px] md:w-[320px] lg:w-[320px] xl:w-[320px] ">
                 {TermDis}
               </div>
             </div>
-
+            {/* creating a shadow effect */}
             <div className="flex justify-center my-2 ">
               <p className="mx-auto  h-3 w-60 bg-black opacity-5  rounded-[100%] shadow-xl"></p>
             </div>
-            {/* displaying the Numbers of cards and when when you click on it. it will call the function displayTermDetails */}
-            <div className="flex justify-center ">
-              {carddata.term.map((item, index) => {
-                return (
-                  <div key={index}
-                    onClick={() => displayTermDetails(item, index + 1)}
-                    className={(active === index + 1 ? "activeCarouselButton" : undefined) + " py-2 border-[2px] border-red-600 font-medium m-1 w-8 rounded-2xl text-center leading-3 bg-blue-700 text-white cursor-pointer hover:text-red-400"}>
-                      {index + 1}
-                  </div>
-                )
-              })}
+            {/* It's next and previous button to navigate between cards */}
+            <div className="flex justify-center items-center">
+              <MdNavigateBefore className='text-5xl cursor-pointer dark:text-white hover:text-blue-400  ' onClick={prevCard} />
+              {/* It's showing active cards and number of cards */}
+              <span className='ml-10'>{active + 1}/</span>
+              <span className='mr-10'>{carddata.term.length}</span>
+              <MdNavigateNext className='text-5xl cursor-pointer dark:text-white hover:text-blue-400  ' onClick={nextCard} />
             </div>
           </div>
 
