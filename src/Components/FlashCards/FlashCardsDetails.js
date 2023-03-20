@@ -42,8 +42,8 @@ const FlashCardsDetails = () => {
   const [TermDis, setTermDis] = useState("");
   // Setting image and definition on click on next and previous button
   const setCard = (NewIndex) => {
-    setTermDis(carddata.term[NewIndex].Enter_Definition)
-    setTermImg(carddata.term[NewIndex].term_uploadimage ? (carddata.term[0].term_uploadimage) : (Details_IMG))
+    setTermDis(carddata.term[NewIndex].Enter_Definition);
+    setTermImg(carddata.term[NewIndex].term_uploadimage ? (carddata.term[NewIndex].term_uploadimage) : (Details_IMG))
   }
   // It's a function for next button
   const nextCard = () => {
