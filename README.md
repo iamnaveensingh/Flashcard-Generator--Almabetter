@@ -4,7 +4,7 @@ This is a frontend Capstone project given by the Almabetter which is Flashcard G
 
 ## Deployment
 
-Click on the link to see my flashcard generator website.
+[Click Here](https://flashcard-generator-almabetter.netlify.app/) to see my flashcard generator website.
 
 ## Run Locally
 
@@ -51,7 +51,7 @@ This project is created with mainly React js , In this project mainly we have th
 
 ## How To Use
 
-1) Open flashcard generator -------------.
+1) Open flashcard generator [Click Here](https://flashcard-generator-almabetter.netlify.app/).
 
 2) Fill up all the input boxes without any Errors and click on "Create" button.
 
