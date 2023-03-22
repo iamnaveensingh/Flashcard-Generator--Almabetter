@@ -22,9 +22,9 @@ Start the server
 
 ## Authors
 
-- [@Naveen_Singh](https://github.com/iamnaveensingh)
-- [@Vikas_Singh](https://github.com/vikassingh8)
-- [@Naresh_Kumhar](https://github.com/nareshkumhar619)
+- [@Naveen Singh](https://github.com/iamnaveensingh)
+- [@Vikas Singh](https://github.com/vikassingh8)
+- [@Naresh Kumhar](https://github.com/nareshkumhar619)
 
 
 ## Tech Stack
