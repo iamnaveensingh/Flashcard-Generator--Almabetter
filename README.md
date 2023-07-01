@@ -4,7 +4,7 @@ This is a frontend Capstone project given by the Almabetter which is Flashcard G
 
 ## Deployment
 
-[Click Here](https://flashcard-generator-almabetter.netlify.app/) to see my flashcard generator website.
+[Click Here](https://flashcard-generator-naveen.vercel.app/) to see my flashcard generator website.
 
 ## Run Locally
 
@@ -33,31 +33,31 @@ Start the server
 - TailwindCSS,
 - React-icons,
 - React Formik & Yup,
-- React-toastify
+- React-toastify,
 
 
 ## About The Project (Flashcard )
-This project is created with mainly React js , In this project mainly we have three pages.
+This project is created with mainly React js, In this project mainly we have three pages.
 ```bash
-1) create Flashcard page 
+1) create a Flashcard page 
 2) My Flashcard page 
 3) Flashcard Details page
 ```
-- Create fashCard page: In this page we used a Formik for creating input boxes, yap for validation and a switch to toggle between light mode to dark mode.
+- Create flashcard page: In this page, we used a Formik for creating input boxes, yap for validation, and a switch to toggle between light mode to dark mode.
 
-- My Flashcard page: In this page you can see your all flashcards 
+- My Flashcard page: On this page, you can see your all flashcards 
 
-- FlashcardDetails page : In this page you can see your flashcards details and you can also share or print your page 
+- FlashcardDetails page: On this page, you can see your flashcards details and you can also share or print your page 
 
 ## How To Use
 
-1) Open flashcard generator [Click Here](https://flashcard-generator-almabetter.netlify.app/).
+1) Open the flashcard generator [Click Here](https://flashcard-generator-naveen.vercel.app/).
 
-2) Fill up all the input boxes without any Errors and click on "Create" button.
+2) Fill up all the input boxes without any Errors and click on the "Create" button.
 
-3) For the viewing recently created flashcards click on "My flashcard" link this will show all flashcard you created recently.
+3) For viewing recently created flashcards click on the "My flashcard" link this will show all flashcards you created recently.
 
-4) For the Viewing Details of flashcard click on "view card" button it will redirect you to the flashcard details page where you take a look of your flashcard details.
+4) For the Viewing Details of the flashcard click on the "view card" button it will redirect you to the flashcard details page where you take a look at your flashcard details.
 
 ## Features
 
